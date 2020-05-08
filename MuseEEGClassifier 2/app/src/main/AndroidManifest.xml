@@ -33,6 +33,7 @@
         </activity>
         <activity android:name=".ActivityRealTimeEEGClassifier" />
         <activity android:name=".ActivityConnectMuse" />
+        <activity android:name=".Player" />
     </application>
 
 </manifest>
