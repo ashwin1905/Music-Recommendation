@@ -6,6 +6,7 @@ import os
 triplets_file = '10000.txt'
 songs_metadata_file = 'song_data.csv'
 
+
 song_df_1 = pandas.read_table(triplets_file, header=None)
 song_df_1.columns = ['user_id', 'song_id', 'listen_count']
 
@@ -44,4 +45,5 @@ csv = 'similar.csv'
 record = pandas.read_csv(csv)
 songs = pandas.unique(record['song'])
 df = pandas.DataFrame(songs)
-df.to_csv('similar__unique_song.csv', header='songs', index=False)
+df.to_csv('similar_unique_song.csv', header='songs', index=False)
+os.remove("similar.csv")

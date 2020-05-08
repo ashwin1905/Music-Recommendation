@@ -72,14 +72,14 @@ class item_similarity_recommender_py():
     def recommend(self, user):
         user_songs = self.get_user_items(user)
         all_songs = self.get_all_items_train_data()
-        concurrence_matrix = self.construct_cooccurence_matrix(user_songs, all_songs)
-        df_recommendations = generate_top_recommendations(user, concurrence_matrix, all_songs, user_songs)
+        coocurrence_matrix = self.construct_cooccurence_matrix(user_songs, all_songs)
+        df_recommendations = generate_top_recommendations(user, coocurrence_matrix, all_songs, user_songs)
         return df_recommendations
 
     def get_similar_items(self, item_list):
         user_songs = item_list
         all_songs = self.get_all_items_train_data()
-        concurrence_matrix = self.construct_cooccurence_matrix(user_songs, all_songs)
+        coocurrence_matrix = self.construct_cooccurence_matrix(user_songs, all_songs)
         user = ""
-        df_recommendations = generate_top_recommendations(user, concurrence_matrix, all_songs, user_songs)
+        df_recommendations = generate_top_recommendations(user, coocurrence_matrix, all_songs, user_songs)
         return df_recommendations
